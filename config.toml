@@ -1,0 +1,73 @@
+languageCode = "en"
+title = "One Drawing Per Day"
+baseURL = "https://www.onedrawingperday.com"
+disableKinds = ["taxonomyTerm"]
+
+
+[taxonomies]
+year = "year"
+month = "month"
+color = "color"
+
+[permalinks]
+drawing = "/drawing/:year/:month/:title/"
+year = "/drawing/:slug/"
+month = "/drawing/:slug/"
+color = "/:slug/"
+
+
+
+[params]
+	name = "One Drawing Per Day"
+    description = "A 365 drawing project on and off since 2005"
+    og_image = ""
+    og_image_url = ""
+    twitter = false
+    enableRSS = false
+    inst_avatar = "https://instagram.fath3-4.fna.fbcdn.net/vp/d4c9a11618106e09b0986cbae64fbd14/5B5706C5/t51.2885-19/s150x150/15275527_339208009779548_8597869505424654336_a.jpg"
+    inst_access = "1366876431.8f5f3b1.9bc4e5b4b6fc4292b9a9d39305d606c8"
+
+[blackfriday]
+    fractions = false
+
+[sitemap]
+  filename = "sitemap.xml"
+
+  [privacy]
+[privacy.googleAnalytics]
+disabled = false
+
+[privacy.disqus]
+disabled = true
+
+[privacy.youtube]
+disabled = false 
+noCookie = true
+
+[privacy.vimeo]
+disabled = false
+
+[privacy.twitter]
+disabled = false
+avatar = "" # URL string
+
+[privacy.instagram]
+disabled = false
+avatar = "https://instagram.fath3-4.fna.fbcdn.net/vp/d4c9a11618106e09b0986cbae64fbd14/5B5706C5/t51.2885-19/"
+
+
+[related]
+
+threshold = 80
+includeNewer = true
+toLower = false
+
+
+[[related.indices]]
+name  = "crosslink"
+weight = 100
+
+[[related.indices]]
+name  = "tags"
+weight = 100
+

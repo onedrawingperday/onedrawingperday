@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html {{ with .Site.LanguageCode }}lang="{{ . }}"{{ end }}>
+	<head>
+		{{ with .Params.robots }}<meta name="robots" content="{{ . }}">{{ end }}
+		<meta charset="utf-8">
+  <!-- Enable responsiveness on mobile devices-->
+ 		 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+ 		 <meta http-equiv="x-ua-compatible" content="ie=edge">
+	  	<title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title | plainify }} &middot; {{ .Site.Title }}{{ end }}</title>
+		  <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else if .IsPage }}{{ .Description }}{{ else if .IsNode }}{{ if eq .Section "exhibitions" }}{{ .Site.Params.exhibitions }}{{ end }}{{ if eq .Section "art-fairs" }}{{ .Site.Params.artfairs }}{{ end }}{{ if eq .Section "artists" }}{{ .Site.Params.artists }}{{ end }}{{ end }}"/>
+ 		 <link rel="dns-prefetch" href="{{ .Site.BaseURL }}">
+		<link rel="preconnect" href="{{ .Site.BaseURL }}">
+ 		 {{ if .IsHome }}<link rel="prefetch prerender" href="{{ range first 1 (where .Pages "Params.hidden" "ne" "true") }}{{ .Permalink }}{{ end }}">{{ end }}
+ 		<link rel="canonical" href="{{ .Permalink }}"/>
+  		<!-- open graph -->
+  		<meta property="og:type" content="website" />
+ 		 <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}"/>
+ 		 <meta property="og:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else if .IsPage }}{{ .Description }}{{ end }}"/>
+ 		 <meta property="og:site_name" content="{{ .Site.Title }}"/>
+ 		 <meta property="og:url" content="{{ .Permalink }}"/>
+ 		 <meta property="og:locale" content="en">
+   		 {{ if .Params.og_image }}
+ 		 <meta property="og:image" content="http:/onedrawingperday.com{{ .Params.og_image | relURL }}"/>
+ 		 <meta property="og:image:secure_url" content="{{ .Params.og_image | absURL }}"/>
+  		{{ else }}
+ 		 <meta property="og:image" content="http:/onedrawingperday.com{{ .Site.Params.og_image | relURL }}"/>
+ 		 <meta property="og:image:secure_url" content="{{ .Site.Params.og_image | absURL }}"/>
+  		{{ end }}
+ 		 <meta property="og:type" content="website"/>
+
+ 		 <!-- twitter -->
+ 		 <meta name="twitter:card" content="summary_large_image"/>
+ 		 {{ if .Params.og_image }}
+ 		 <meta name="twitter:image:src" content="{{ .Params.og_image }}"/>
+ 		 {{ else }}
+ 		 <meta name="twitter:image:src" content="{{ .Site.Params.og_image }}"/>
+  		{{ end }}
+  		<meta name="twitter:card" content="summary"/>
+  		<meta name="twitter:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}"/>
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Artist",
+  "name": "One Drawing Per Day",
+  "url": "https://www.onedrawingperday.com",
+  "sameAs": [
+    "https://www.instagram.com/onedrawingperdaytsanis/"
+  ]
+}
+</script>
+      {{ $css := resources.Get "css/style.css" | minify }}
+    <style>{{ $css.Content | safeCSS }}</style>
+			</head>
