@@ -1,6 +1,28 @@
 body {
 	overflow: hidden;
-	background: white !important;
+    text-align: center; 
+    background: radial-gradient(ellipse at top, #575757, transparent), radial-gradient(ellipse at bottom, #a8bedb, transparent);
+    background-size: 300% 300%;
+    -webkit-animation: MoveBG 30s ease infinite;
+    -moz-animation: MoveBG 30s ease infinite;
+    -o-animation: MoveBG 30s ease infinite;
+    animation: MoveBG 30s ease infinite;
+}
+
+@-webkit-keyframes MoveBG {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes MoveBG {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes MoveBG {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
 .wrapper.index {
@@ -274,7 +296,6 @@ body {
  color:#666;
  -webkit-font-smoothing:antialiased;
  text-rendering:optimizeLegibility;
- background:#fff;
  overflow-x: hidden;
 }
 a {
@@ -1818,7 +1839,6 @@ p.right {
 
 body {
 	min-height: 100vh;
-	background-color: #fafafa;
 }
 
 .container {
