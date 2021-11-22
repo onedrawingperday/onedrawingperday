@@ -27,15 +27,20 @@ color = "/:slug/"
     inst_avatar = "https://instagram.fath3-4.fna.fbcdn.net/vp/d4c9a11618106e09b0986cbae64fbd14/5B5706C5/t51.2885-19/s150x150/15275527_339208009779548_8597869505424654336_a.jpg"
     inst_access = "1366876431.8f5f3b1.9bc4e5b4b6fc4292b9a9d39305d606c8"
 
-[blackfriday]
-    fractions = false
+[markup]
+
+[markup.goldmark]
+
+[markup.goldmark.renderer]
+hardWraps = true
+unsafe = true
 
 [sitemap]
   filename = "sitemap.xml"
 
   [privacy]
 [privacy.googleAnalytics]
-disabled = false
+disabled = true
 
 [privacy.disqus]
 disabled = true

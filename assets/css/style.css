@@ -1,4 +1,4 @@
-body {
+body.home {
 	overflow: hidden;
     text-align: center; 
     background: radial-gradient(ellipse at top, #575757, transparent), radial-gradient(ellipse at bottom, #a8bedb, transparent);
@@ -3813,3 +3813,31 @@ h2#helpful-tips, h2#video-highlights {
 }
 
 .about article  p { margin-bottom: 0px !important; }
+}
+
+.projects p {
+  line-height: 1;
+}
+.projects p a {
+  font-size: clamp(1rem, 0.1111rem + 4.4444vw, 4rem);
+  color:#2d2d32;
+}
+
+.projects p a{
+  background: linear-gradient(to right, crimson,yellow,springgreen);
+  background-size: 200% 200%;
+  animation: rainbow 2s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip:text;
+  width:80vw;
+  transition: color .2s ease-in-out;
+  font-weight:900;
+}
+.projects p a:hover{
+  color:rgba(0,0,0,0);
+}
+@keyframes rainbow { 
+  0%{background-position:left}
+  50%{background-position:right}
+  100%{background-position:left}
+}

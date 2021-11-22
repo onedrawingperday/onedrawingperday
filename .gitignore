@@ -1,1 +1,6 @@
 /public
+/static/generator
+.DS_Store
+/static/sol
+/static/dnt
+.hugo_build.lock

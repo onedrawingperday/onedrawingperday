@@ -1,0 +1,9 @@
+{{ define "main" }}
+	<main class="single">
+			<div class="entry-content{{ if in .Permalink "projects" }} projects{{ end  }}" itemprop="articleBody">
+				{{ .Content }}
+			</div>
+		</article>
+	</main>
+<!-- </div> -->
+{{ end }}
