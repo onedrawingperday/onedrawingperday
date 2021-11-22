@@ -43,15 +43,18 @@ body.home {
 }
 
 .coming-soon img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    max-width: 800px;
+  position: absolute; 
+  top: 0;
+  left: -20vw;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 140vw;
   animation: shake 60s;
   animation-iteration-count: infinite;
+  height: 120vh;
+  image-rendering: crisp-edges;
+  filter: contrast(30%)brightness(200%);
 }
 
 @keyframes shake {
@@ -78,6 +81,7 @@ body.home {
 
 .coming-soon img {
 	max-width: 90vw;
+  left: -5vw;
 }
 }
 
@@ -3820,7 +3824,7 @@ h2#helpful-tips, h2#video-highlights {
 }
 .projects p a {
   font-size: clamp(1rem, 0.1111rem + 4.4444vw, 4rem);
-  color:#2d2d32;
+  color:silver;
 }
 
 .projects p a{
