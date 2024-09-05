@@ -2,7 +2,7 @@
 title = "Projects"
 date = "21 Nov 21 7:44 EEST"
 +++
-Hi! I'm Alexandros. I make websites (see below 👇) and I design for print (e.g. this <a href="https://www.embitsakis.com/?=$3#view=persistent,0" class="intext" target="_blank">book</a>, this <a href="https://www.vogiatzogloucollection.gr/uploads/docs/2018/04/153.pdf" class="intext" target="_blank">one</a> and this <a href="https://www.vogiatzogloucollection.gr/uploads/docs/2018/04/154.pdf" class="intext" target="_blank">one</a>). Check out my drawings on <a href="https://instagram.com/onedrawingperday" class="intext" target="_blank">IG</a>. To say “<span style="color:red">hi!</span>” just click on the bouncing smiley. Cheers!
+Hi! I'm Alexandros. I make websites (see below 👇) and design for print (e.g. this <a href="https://www.embitsakis.com/?=$3#view=persistent,0" class="intext" target="_blank">book</a>, this <a href="https://www.vogiatzogloucollection.gr/uploads/docs/2018/04/153.pdf" class="intext" target="_blank">one</a> and this <a href="https://www.vogiatzogloucollection.gr/uploads/docs/2018/04/154.pdf" class="intext" target="_blank">one</a>). Check out my drawings on <a href="https://instagram.com/onedrawingperday" class="intext" target="_blank">IG</a>. To say “<span style="color:red">hi!</span>” just click on the bouncing smiley. Cheers!
 
 [https://www.potentialproject.gr](https://www.potentialproject.gr)
 [https://www.embitsakis.com](https://www.embitsakis.com)
@@ -90,33 +90,32 @@ updateKeyframes(); // Initial call to set keyframes
 const smiley = document.getElementById('smiley');
 const svg = smiley.querySelector('svg');
 
-// Pause animation and apply hover effects on touchstart
+// Apply hover effects on touchstart (red glow and scale up)
 smiley.addEventListener('touchstart', () => {
   smiley.style.animationPlayState = 'paused';
   svg.style.transform = 'scale(1.15)';
   svg.style.filter = 'drop-shadow(0 0 15px red)';
 }, { passive: true });
 
-// Resume animation and remove hover effects on touchend
-smiley.addEventListener('touchend', () => {
-  smiley.style.animationPlayState = 'running';
-  svg.style.transform = 'scale(1)';
-  svg.style.filter = 'none';
-}, { passive: true });
-
-// Pause animation on hover
-smiley.addEventListener('mouseover', () => {
-  smiley.style.animationPlayState = 'paused';
-});
-
-// Resume animation after hover ends
-smiley.addEventListener('mouseout', () => {
-  smiley.style.animationPlayState = 'running';
-});
-
-// Add touchstart event to resume animation on mobile after being clicked
+// Ensure animation resumes and glow is removed on click (after touchend)
 smiley.addEventListener('click', () => {
   smiley.style.animationPlayState = 'running';
+  svg.style.transform = 'scale(1)';  // Reset scale
+  svg.style.filter = 'none';         // Remove the red glow
+});
+
+// Pause animation on hover (red glow and scale up)
+smiley.addEventListener('mouseover', () => {
+  smiley.style.animationPlayState = 'paused';
+  svg.style.transform = 'scale(1.15)';
+  svg.style.filter = 'drop-shadow(0 0 15px red)';
+});
+
+// Resume animation and maintain original state after hover ends
+smiley.addEventListener('mouseout', () => {
+  smiley.style.animationPlayState = 'running';
+  svg.style.transform = 'scale(1)';
+  svg.style.filter = 'none'; // Ensure red glow is removed after hover
 });
   </script>
 <script>
