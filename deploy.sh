@@ -1,2 +1,2 @@
 git add . 
-git commit -m "inst" && git push -u origin master
+git commit -m "update" && git push -u origin master

@@ -49,50 +49,66 @@ Hi! I'm Alexandros. I make websites (see below 👇) and I design for print (e.g
   </svg>
 </a>
   <script>
-       function updateKeyframes() {
-      const styleSheet = document.styleSheets[0];
-      const vw = window.innerWidth;
-      const vh = window.innerHeight;
+function updateKeyframes() {
+  const styleSheet = document.styleSheets[0];
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const scrollX = window.scrollX;
+  const scrollY = window.scrollY;
 
-      const moveXKeyframes = `
-        @keyframes moveX {
-          from { left: 0; } to { left: ${vw - 50}px; }
-        }
-      `;
-      const moveYKeyframes = `
-        @keyframes moveY {
-          from { top: 0; } to { top: ${vh - 50}px; }
-        }
-      `;
-
-      // Remove existing keyframes
-      for (let i = styleSheet.cssRules.length - 1; i >= 0; i--) {
-        if (styleSheet.cssRules[i].name === 'moveX' || styleSheet.cssRules[i].name === 'moveY') {
-          styleSheet.deleteRule(i);
-        }
-      }
-
-      // Insert new keyframes
-      styleSheet.insertRule(moveXKeyframes, styleSheet.cssRules.length);
-      styleSheet.insertRule(moveYKeyframes, styleSheet.cssRules.length);
+  const moveXKeyframes = `
+    @keyframes moveX {
+      from { left: ${scrollX}px; } to { left: ${scrollX + vw - 50}px; }
     }
+  `;
+  const moveYKeyframes = `
+    @keyframes moveY {
+      from { top: ${scrollY}px; } to { top: ${scrollY + vh - 50}px; }
+    }
+  `;
 
-    window.addEventListener('resize', updateKeyframes);
-    updateKeyframes(); // Initial call to set keyframes
+  // Remove existing keyframes
+  for (let i = styleSheet.cssRules.length - 1; i >= 0; i--) {
+    if (styleSheet.cssRules[i].name === 'moveX' || styleSheet.cssRules[i].name === 'moveY') {
+      styleSheet.deleteRule(i);
+    }
+  }
 
-    const smiley = document.getElementById('smiley');
+  // Insert new keyframes
+  styleSheet.insertRule(moveXKeyframes, styleSheet.cssRules.length);
+  styleSheet.insertRule(moveYKeyframes, styleSheet.cssRules.length);
+}
 
-    smiley.addEventListener('touchstart', () => {
-      smiley.style.animationPlayState = 'paused';
-      smiley.querySelector('svg').style.transform = 'scale(1.5)';
-      smiley.querySelector('svg').style.filter = 'drop-shadow(0 0 15px red)';
-    });
+function onScrollOrResize() {
+  requestAnimationFrame(updateKeyframes);
+}
 
-    smiley.addEventListener('touchend', () => {
-      smiley.style.animationPlayState = 'running';
-      smiley.querySelector('svg').style.transform = 'scale(1)';
-      smiley.querySelector('svg').style.filter = 'none';
-    });
+window.addEventListener('resize', onScrollOrResize);
+window.addEventListener('scroll', onScrollOrResize);
+updateKeyframes(); // Initial call to set keyframes
+
+const smiley = document.getElementById('smiley');
+const svg = smiley.querySelector('svg');
+
+smiley.addEventListener('touchstart', () => {
+  smiley.style.animationPlayState = 'paused';
+  svg.style.transform = 'scale(1.15)';
+  svg.style.filter = 'drop-shadow(0 0 15px red)';
+}, { passive: true });
+
+smiley.addEventListener('touchend', () => {
+  smiley.style.animationPlayState = 'running';
+  svg.style.transform = 'scale(1)';
+  svg.style.filter = 'none';
+}, { passive: true });
+
+smiley.addEventListener('mouseover', () => {
+  smiley.style.animationPlayState = 'paused';
+});
+
+smiley.addEventListener('mouseout', () => {
+  smiley.style.animationPlayState = 'running';
+});
   </script>
 <script>
   // Get the smiley element
