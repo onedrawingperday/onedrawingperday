@@ -49,7 +49,7 @@ Hi! I'm Alexandros. I make websites (see below 👇) and I design for print (e.g
   </svg>
 </a>
   <script>
-function updateKeyframes() {
+  function updateKeyframes() {
   const styleSheet = document.styleSheets[0];
   const vw = window.innerWidth;
   const vh = window.innerHeight;

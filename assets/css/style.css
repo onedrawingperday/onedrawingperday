@@ -3853,47 +3853,47 @@ h2#helpful-tips, h2#video-highlights {
   }
 }
 
-:root {
-  --moveX-duration: 6.05s;
-  --moveY-duration: 6.4s;
-  --rotate-duration: 6s;
-}
-#smiley {
-  display: block;
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  cursor: pointer;
-  animation: moveX var(--moveX-duration) linear 0s infinite alternate, moveY var(--moveY-duration) linear 0s infinite alternate, rotate var(--rotate-duration) linear infinite;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  outline: none; /* Remove default focus outline */
-}
-#smiley:focus {
-  outline: none; /* Ensure no outline on focus */
-}
-#smiley:hover svg {
-  transform: scale(1.15);
-  filter: drop-shadow(0 0 15px red);
-}
-@keyframes moveX {
-  from { left: 0; } to { left: calc(100vw - 50px); }
-}
-@keyframes moveY {
-  from { top: 0; } to { top: calc(100vh - 50px); }
-}
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Media query for mobile devices */
-@media (max-width: 768px) {
   :root {
-    --moveX-duration: 3.025s;
-    --moveY-duration: 3.2s;
-    --rotate-duration: 3s;
+    --moveX-duration: 6.05s;
+    --moveY-duration: 6.4s;
+    --rotate-duration: 6s;
   }
-}
+  #smiley {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+    animation: moveX var(--moveX-duration) linear 0s infinite alternate, moveY var(--moveY-duration) linear 0s infinite alternate, rotate var(--rotate-duration) linear infinite;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    outline: none; /* Remove default focus outline */
+  }
+  #smiley:focus {
+    outline: none; /* Ensure no outline on focus */
+  }
+  #smiley:hover svg {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 15px red);
+  }
+  @keyframes moveX {
+    from { left: 0; } to { left: calc(100vw - 50px); }
+  }
+  @keyframes moveY {
+    from { top: 0; } to { top: calc(100vh - 50px); }
+  }
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Media query for mobile devices */
+  @media (max-width: 768px) {
+    :root {
+      --moveX-duration: 3.025s;
+      --moveY-duration: 3.2s;
+      --rotate-duration: 3s;
+    }
+  }
 
 /* previous CSS animation project links 
 
