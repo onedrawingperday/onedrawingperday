@@ -90,23 +90,32 @@ updateKeyframes(); // Initial call to set keyframes
 const smiley = document.getElementById('smiley');
 const svg = smiley.querySelector('svg');
 
+// Pause animation and apply hover effects on touchstart
 smiley.addEventListener('touchstart', () => {
   smiley.style.animationPlayState = 'paused';
   svg.style.transform = 'scale(1.15)';
   svg.style.filter = 'drop-shadow(0 0 15px red)';
 }, { passive: true });
 
+// Resume animation and remove hover effects on touchend
 smiley.addEventListener('touchend', () => {
   smiley.style.animationPlayState = 'running';
   svg.style.transform = 'scale(1)';
   svg.style.filter = 'none';
 }, { passive: true });
 
+// Pause animation on hover
 smiley.addEventListener('mouseover', () => {
   smiley.style.animationPlayState = 'paused';
 });
 
+// Resume animation after hover ends
 smiley.addEventListener('mouseout', () => {
+  smiley.style.animationPlayState = 'running';
+});
+
+// Add touchstart event to resume animation on mobile after being clicked
+smiley.addEventListener('click', () => {
   smiley.style.animationPlayState = 'running';
 });
   </script>
