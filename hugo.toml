@@ -1,7 +1,7 @@
 languageCode = "en"
 title = "One Drawing Per Day"
 baseURL = "https://www.onedrawingperday.com"
-disableKinds = ["taxonomyTerm"]
+disableKinds = ["taxonomy"]
 
 
 [taxonomies]
@@ -14,6 +14,9 @@ drawing = "/drawing/:year/:month/:title/"
 year = "/drawing/:slug/"
 month = "/drawing/:slug/"
 color = "/:slug/"
+
+[security]
+  enableInlineShortcodes = true
 
 
 
