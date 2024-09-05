@@ -3866,9 +3866,13 @@ h2#helpful-tips, h2#video-highlights {
   cursor: pointer;
   animation: moveX var(--moveX-duration) linear 0s infinite alternate, moveY var(--moveY-duration) linear 0s infinite alternate, rotate var(--rotate-duration) linear infinite;
   transition: transform 0.3s ease, filter 0.3s ease;
+  outline: none; /* Remove default focus outline */
+}
+#smiley:focus {
+  outline: none; /* Ensure no outline on focus */
 }
 #smiley:hover svg {
-  transform: scale(1.2);
+  transform: scale(1.15);
   filter: drop-shadow(0 0 15px red);
 }
 @keyframes moveX {
@@ -3880,6 +3884,15 @@ h2#helpful-tips, h2#video-highlights {
 @keyframes rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  :root {
+    --moveX-duration: 3.025s;
+    --moveY-duration: 3.2s;
+    --rotate-duration: 3s;
+  }
 }
 
 /* previous CSS animation project links 
