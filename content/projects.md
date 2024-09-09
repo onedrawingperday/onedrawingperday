@@ -2,7 +2,7 @@
 title = "Projects"
 date = "21 Nov 21 7:44 EEST"
 +++
-Hey! I'm Alexandros. I make websites (see below 👇) and design for print (like this <a href="/Assemblies-Naked-Punch.pdf" class="intext" target="_blank">supplement</a> and this <a href="https://www.embitsakis.com/?=$3#view=persistent,0" class="intext" target="_blank">book</a>). Check out my drawings on <a href="https://instagram.com/onedrawingperday" class="intext" target="_blank">IG</a>. To say “<span style="color:red">hi!</span>” just click on the bouncing smiley. Cheers!
+Hey! I'm Alexandros. I make websites (see below 👇) and design for print (like this <a href="/Assemblies-Naked-Punch.pdf" class="intext" target="_blank" rel="noopener noreferrer">supplement</a> and this <a href="https://www.embitsakis.com/?=$3#view=persistent,0" class="intext" target="_blank" rel="noopener noreferrer">book</a>). Check out my drawings on <a href="https://instagram.com/onedrawingperday" class="intext" target="_blank" rel="noopener noreferrer">IG</a>. To say “<span style="color:red">hi!</span>” just click on the bouncing smiley. Cheers!
 
 [https://www.potentialproject.gr](https://www.potentialproject.gr)
 [https://www.embitsakis.com](https://www.embitsakis.com)
